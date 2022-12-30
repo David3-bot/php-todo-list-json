@@ -16,11 +16,33 @@
 
 </head>
 
-<body>
+<body class="bg-black">
+    <div id="app">
+        <div class="container">
+            <h1 class="text-center text-danger">To Do Maybe</h1>
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div class="card">
+                        <ul class="list-group list-group-flush">
+                            <li v-for="maybeTab in maybeList" class="d-flex justify-content-between">
+                                {{maybeTab.mayBe}} <button class="bg-danger"><i
+                                        class="fa-regular fa-trash-can"></i></button></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <form @submit.prevent="submit" action="" method="post"  class="input-group">
+                            <input v-model="maybeTab.mayBe" name="inPut" type="text" class="form-control"
+                                placeholder="Add task" aria-label="">
+                            <button class="btn btn-outline-warning " type="submit">Vai!</button>
+                        </form>
+                    </div>
+                </div>
 
-    <div id="app"></div>
-    
+            </div>
 
+
+        </div>
+    </div>
     <script src="javas/main.js"></script>
 </body>
 
